@@ -1,5 +1,7 @@
 package com.tikal.course.java.model.customers;
 
+import java.util.List;
+
 /**
  * Created by Haim.Turkel on 9/10/2015.
  *
@@ -36,5 +38,10 @@ public class Female extends Person{
         return "Female{" +
                 "childCount=" + childCount +
                 '}' + super.toString();
+    }
+
+    public static <T extends Comparable<? super T>> T max(List<? extends T> list, int begin, int end){
+        T maxElement = list.get(begin);
+        return  maxElement;
     }
 }
