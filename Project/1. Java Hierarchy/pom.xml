@@ -4,24 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>java.hierarchy</artifactId>
+	<artifactId>reactor</artifactId>
 	<groupId>tikal.course</groupId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>Java Spring Hibernate Intro Course :: ${project.artifactId}</name>
 	<properties>
 		<junit.version>4.11</junit.version>
-
-		<!-- plugins propeties 
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.testTarget>1.8</maven.compiler.testTarget>
-		<maven.compiler.testSource>1.8</maven.compiler.testSource>
-		-->
-
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -29,7 +21,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -42,5 +34,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+ <modules>
+        <module>model</module>
+		<module>service</module>
+</modules>		
 
 </project>
