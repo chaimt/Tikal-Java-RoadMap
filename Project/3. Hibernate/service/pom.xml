@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<properties>
+		<spring.version>4.2.4.RELEASE</spring.version>
+	</properties>
+
+	<parent>
+		<artifactId>reactor</artifactId>
+		<groupId>com.tikal.course</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>java.spring.service</artifactId>
+	<name>Java Spring Hibernate Intro Course :: ${project.artifactId}</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.tikal.course</groupId>
+			<artifactId>java.spring.module</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tikal.course</groupId>
+			<artifactId>java.spring.dao</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+	</dependencies>	
+
+</project>

@@ -4,10 +4,7 @@ import com.tikal.course.java.model.customers.Male;
 import com.tikal.course.java.model.customers.Person;
 import com.tikal.course.java.service.People;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
@@ -76,9 +73,11 @@ public class People8Impl implements People {
 
     @Override
     public double getAverageAge(int overAge) {
-        IntStream intStream = people.values().stream().filter(person1 -> person1.getAge() > overAge).mapToInt(value -> value.getAge());
-        double d= intStream.sum()/intStream.count();
-        return d;
+        OptionalDouble avrgValue =  people.values().stream().filter(person1 -> person1.getAge() > overAge).mapToInt(value -> value.getAge()).average();
+        return avrgValue.getAsDouble();
+//        IntStream intStream = people.values().stream().filter(person1 -> person1.getAge() > overAge).mapToInt(value -> value.getAge());
+//        double d= intStream.sum()/intStream.count();
+//        return d;
     }
 
     @Override
