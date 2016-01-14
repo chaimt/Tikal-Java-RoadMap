@@ -1,9 +1,12 @@
 package com.tikal.course.java.service.impl;
 
+import com.tikal.course.java.dao.CarRepository;
+import com.tikal.course.java.dao.VehicleRepository;
 import com.tikal.course.java.model.vehicles.Car;
 import com.tikal.course.java.model.vehicles.Color;
 import com.tikal.course.java.model.vehicles.Vehicle;
 import com.tikal.course.java.service.Vehicles;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -15,21 +18,24 @@ import java.util.List;
 @Component
 public class VehiclesImpl implements Vehicles {
 
-    private List<Vehicle> vehicles = new ArrayList<>();
+    @Autowired
+    VehicleRepository vehicleRepository;
+
+    @Autowired
+    CarRepository carRepository;
 
     @Override
-    public List<Car> getByColor(Color color) {
-        List<Car> cars = new ArrayList<>();
-        for (Vehicle vehicle : vehicles){
-            if (vehicle instanceof Car){
-                cars.add((Car)vehicle);
-            }
-        }
-        return cars;
+    public List<Car> getCarByColor(Color color) {
+        return carRepository.getByColor(color);
+    }
+
+    @Override
+    public List<Vehicle> getVehicleByColor(Color color) {
+        return vehicleRepository.getByColor(color);
     }
 
     @Override
     public void add(Vehicle vehicle) {
-        vehicles.add(vehicle);
+        vehicleRepository.save(vehicle);
     }
 }

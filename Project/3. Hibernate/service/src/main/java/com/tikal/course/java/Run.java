@@ -32,14 +32,14 @@ public class Run {
     }
 
     public static void cars() {
-        Car economy = new EconomyCar(1970, EngineType.medium, Color.red);
+        Car economy = new EconomyCar(1970, EngineType.medium, 33,Color.red);
         System.out.println(economy.toString());
 
         economy.drive();
-        Car family = new FamilyCar(1990,EngineType.small,4);
+        Car family = new FamilyCar(1990,EngineType.small,4,Color.blue);
         System.out.println(family.toString());
         family.drive();
-        Vehicle motorcycle = new Motorcycle(2000,MotorcycleType.Scooter);
+        Vehicle motorcycle = new Motorcycle(2000,MotorcycleType.Scooter,Color.yellow);
         System.out.println(motorcycle.toString());
         motorcycle.drive();
     }

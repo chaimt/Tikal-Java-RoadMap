@@ -16,9 +16,16 @@ public class VehiclesAPI {
     @Autowired
     private Vehicles vehicles;
 
-    @RequestMapping(path = "/byColor",method= RequestMethod.GET)
+    @RequestMapping(path = "/byCarColor",method= RequestMethod.GET)
     public @ResponseBody List<Car> carByColor(Color color) {
-        List<Car> cars =  vehicles.getByColor(color);
+        List<Car> cars =  vehicles.getCarByColor(color);
         return cars;
     }
+
+    @RequestMapping(path = "/byVehicleColor",method= RequestMethod.GET)
+    public @ResponseBody List<Vehicle> getVehicleByColor(Color color) {
+        List<Vehicle> vehicle =  vehicles.getVehicleByColor(color);
+        return vehicle;
+    }
+
 }

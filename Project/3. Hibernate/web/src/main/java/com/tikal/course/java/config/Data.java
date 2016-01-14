@@ -19,7 +19,7 @@ public class Data {
 
     public boolean run(Color color){
         this.person=person;
-        List<Car> cars = vehicles.getByColor(color);
+        List<Car> cars = vehicles.getCarByColor(color);
         if (cars.size()>0){
             //order car
             return true;

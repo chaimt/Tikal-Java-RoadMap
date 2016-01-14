@@ -1,14 +1,33 @@
 package com.tikal.course.java.model.vehicles;
 
+import javax.persistence.*;
+
 /**
  * Created by Haim.Turkel on 9/10/2015.
  */
+@Entity
+@Table(name="Vehicle")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Vehicle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "year")
     private int year;
+
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name="color")
     private Color color;
 
-    public Vehicle(int year) {
+    public Vehicle() {
+
+    }
+
+    public Vehicle(int year, Color color) {
         this.year = year;
+        this.color = color;
     }
 
     public int getYear() {
@@ -33,4 +52,13 @@ public abstract class Vehicle {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
