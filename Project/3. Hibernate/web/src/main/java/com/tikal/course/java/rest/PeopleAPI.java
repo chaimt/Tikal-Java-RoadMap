@@ -38,7 +38,12 @@ public class PeopleAPI {
 
     @RequestMapping(path = "/findPerson",method= RequestMethod.GET)
     public @ResponseBody Person findPerson(String firstName, String lastName) {
-        return people.findPerson(firstName,lastName);
+        return people.findPerson(firstName, lastName);
+    }
+
+    @RequestMapping(path = "/findMale",method= RequestMethod.GET)
+    public @ResponseBody Male findMan(String firstName) {
+        return people.findMan(firstName);
     }
 
     @RequestMapping(path = "/getAverageAge",method= RequestMethod.GET)

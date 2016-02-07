@@ -61,9 +61,10 @@ public class PeopleImpl implements People{
 
     @Override
     public Male findMan(String firstName) {
-        List<Person> people =  repository.findByFirstName(firstName);
+        List<Male> people =  repository.findMaleByFirstName(firstName);
+//        List<Person> people =  repository.findByFirstName(firstName);
         if (people.size()==1){
-            return (Male)people.get(0);
+            return people.get(0);
         }
         return null;
     }
