@@ -41,7 +41,7 @@ public class Streams {
         System.out.println(total);
 
 
-        String::toUpperCase
+//        String::toUpperCase
 
         //version 2 -> we say what we want and not how
         System.out.println(
